@@ -42,16 +42,16 @@ drop table if exists pulication_auteur CASCADE;
 /* Table : Auteur                                               */
 /*==============================================================*/
 create table auteur (
-   id                   INT4                 not null,
+   id                   serial           	 not null,
    type					VARCHAR(254)		 not null,
-   id_institution        INT4                 not null,
+   id_institution        INT4                not null,
    nom                  VARCHAR(254)         null,
    prenom               VARCHAR(254)         null,
    email                VARCHAR(254)         null,
    sitePerso            VARCHAR(254)         null,
    idTelecom            VARCHAR(254)         null,
    idExterne            VARCHAR(254)         null,
-   constraint PK_AUTEUR primary key (id)
+   constraint PK_AUTEUR primary key (id) 
 );
 
 /*==============================================================*/
@@ -72,7 +72,7 @@ id_institution
 /* Table : Authentification                                     */
 /*==============================================================*/
 create table authentification (
-   id_authentification   INT4                 not null,
+   id_authentification   serial                 not null,
    login                VARCHAR(254)         null,
    password             VARCHAR(254)         null,
    role                 VARCHAR(254)         null,
@@ -90,7 +90,7 @@ id_authentification
 /* Table : InstitutionRattchement                               */
 /*==============================================================*/
 create table institutionrattchement (
-   id_institution        INT4                 not null,
+   id_institution        serial                 not null,
    nomInstitution       VARCHAR(254)         null,
    adresse              VARCHAR(254)         null,
    constraint PK_INSTITUTIONRATTCHEMENT primary key (id_institution)
@@ -107,7 +107,7 @@ id_institution
 /* Table : Publication                                          */
 /*==============================================================*/
 create table publication (
-   id                   INT4                 not null,
+   id                   serial                 not null,
    type					VARCHAR(254)		 not null,
    titre                VARCHAR(254)         not null,
    datePublication      DATE                 null,
@@ -140,7 +140,7 @@ id
 /* Table : Reference                                            */
 /*==============================================================*/
 create table reference (
-   id_reference          INT4                 not null,
+   id_reference          serial                 not null,
    id                   INT4                 null,
    codeReference        VARCHAR(254)         null,
    institutionRattachement VARCHAR(254)         null,
