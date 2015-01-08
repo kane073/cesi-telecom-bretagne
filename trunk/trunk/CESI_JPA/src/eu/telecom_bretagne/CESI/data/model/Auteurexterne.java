@@ -19,6 +19,14 @@ public class Auteurexterne extends Auteur implements Serializable {
 		super();
 	}
 	
+	public Auteurexterne(Auteur auteur) {
+		super();
+		setNom(auteur.getNom());
+		setPrenom(auteur.getPrenom());
+		setEmail(auteur.getEmail());
+		setSiteperso(auteur.getSiteperso());
+		setInstitutionrattchement(auteur.getInstitutionrattchement());
+	}
 
 	private String idexterne;
 
