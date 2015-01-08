@@ -14,9 +14,10 @@ public class Authentification implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@SequenceGenerator(name="AUTHENTIFICATION_IDAUTHENTIFICATION_GENERATOR", sequenceName="AUTHENTIFICATION_IDAUTHENTIFICATION_SEQ", allocationSize=1)
+	@SequenceGenerator(name="AUTHENTIFICATION_IDAUTHENTIFICATION_GENERATOR", sequenceName="AUTHENTIFICATION_ID_AUTHENTIFICATION_SEQ")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="AUTHENTIFICATION_IDAUTHENTIFICATION_GENERATOR")
-	private Integer idauthentification;
+	@Column(name="id_authentification")
+	private Integer idAuthentification;
 
 	private String login;
 
@@ -27,12 +28,12 @@ public class Authentification implements Serializable {
 	public Authentification() {
 	}
 
-	public Integer getIdauthentification() {
-		return this.idauthentification;
+	public Integer getIdAuthentification() {
+		return this.idAuthentification;
 	}
 
-	public void setIdauthentification(Integer idauthentification) {
-		this.idauthentification = idauthentification;
+	public void setIdAuthentification(Integer idAuthentification) {
+		this.idAuthentification = idAuthentification;
 	}
 
 	public String getLogin() {

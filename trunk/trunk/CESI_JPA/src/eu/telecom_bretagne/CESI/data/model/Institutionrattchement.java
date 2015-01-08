@@ -15,9 +15,10 @@ public class Institutionrattchement implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@SequenceGenerator(name="INSTITUTIONRATTCHEMENT_IDINSTITUTION_GENERATOR", sequenceName="INSTITUTIONRATTCHEMENT_IDINSTITUTION_SEQ", allocationSize=1)
+	@SequenceGenerator(name="INSTITUTIONRATTCHEMENT_IDINSTITUTION_GENERATOR", sequenceName="INSTITUTIONRATTCHEMENT_ID_INSTITUTION_SEQ")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="INSTITUTIONRATTCHEMENT_IDINSTITUTION_GENERATOR")
-	private Integer idinstitution;
+	@Column(name="id_institution")
+	private Integer idInstitution;
 
 	private String adresse;
 
@@ -30,12 +31,12 @@ public class Institutionrattchement implements Serializable {
 	public Institutionrattchement() {
 	}
 
-	public Integer getIdinstitution() {
-		return this.idinstitution;
+	public Integer getIdInstitution() {
+		return this.idInstitution;
 	}
 
-	public void setIdinstitution(Integer idinstitution) {
-		this.idinstitution = idinstitution;
+	public void setIdInstitution(Integer idInstitution) {
+		this.idInstitution = idInstitution;
 	}
 
 	public String getAdresse() {

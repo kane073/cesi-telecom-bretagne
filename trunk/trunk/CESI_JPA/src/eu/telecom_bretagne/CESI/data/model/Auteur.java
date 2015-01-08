@@ -1,9 +1,7 @@
 package eu.telecom_bretagne.CESI.data.model;
 
 import java.io.Serializable;
-
 import javax.persistence.*;
-
 import java.util.Set;
 
 
@@ -36,7 +34,7 @@ public class Auteur implements Serializable {
 
 	//bi-directional many-to-one association to Institutionrattchement
 	@ManyToOne
-	@JoinColumn(name="idinstitution")
+	@JoinColumn(name="id_institution")
 	private Institutionrattchement institutionrattchement;
 
 	//bi-directional many-to-many association to Publication
@@ -61,7 +59,7 @@ public class Auteur implements Serializable {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
+
 	public String getNom() {
 		return this.nom;
 	}
