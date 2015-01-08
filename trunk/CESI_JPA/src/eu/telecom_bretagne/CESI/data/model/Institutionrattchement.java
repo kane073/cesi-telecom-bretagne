@@ -15,7 +15,7 @@ public class Institutionrattchement implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@SequenceGenerator(name="INSTITUTIONRATTCHEMENT_IDINSTITUTION_GENERATOR", sequenceName="INSTITUTIONRATTCHEMENT_ID_INSTITUTION_SEQ")
+	@SequenceGenerator(name="INSTITUTIONRATTCHEMENT_IDINSTITUTION_GENERATOR", sequenceName="INSTITUTIONRATTCHEMENT_ID_INSTITUTION_SEQ", allocationSize=1)
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="INSTITUTIONRATTCHEMENT_IDINSTITUTION_GENERATOR")
 	@Column(name="id_institution")
 	private Integer idInstitution;
