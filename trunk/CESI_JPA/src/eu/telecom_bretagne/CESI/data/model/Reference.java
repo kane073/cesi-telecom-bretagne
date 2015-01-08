@@ -15,9 +15,10 @@ public class Reference implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@SequenceGenerator(name="REFERENCE_IDREFERENCE_GENERATOR", sequenceName="REFERENCE_IDREFERENCE_SEQ", allocationSize=1)
+	@SequenceGenerator(name="REFERENCE_IDREFERENCE_GENERATOR", sequenceName="REFERENCE_ID_REFERENCE_SEQ")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="REFERENCE_IDREFERENCE_GENERATOR")
-	private Integer idreference;
+	@Column(name="id_reference")
+	private Integer idReference;
 
 	private String codereference;
 
@@ -37,12 +38,12 @@ public class Reference implements Serializable {
 	public Reference() {
 	}
 
-	public Integer getIdreference() {
-		return this.idreference;
+	public Integer getIdReference() {
+		return this.idReference;
 	}
 
-	public void setIdreference(Integer idreference) {
-		this.idreference = idreference;
+	public void setIdReference(Integer idReference) {
+		this.idReference = idReference;
 	}
 
 	public String getCodereference() {

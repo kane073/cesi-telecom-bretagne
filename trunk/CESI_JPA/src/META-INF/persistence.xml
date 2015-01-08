@@ -4,14 +4,14 @@
 		<jta-data-source>jdbc/CESI</jta-data-source>
 		<class>eu.telecom_bretagne.CESI.data.model.Agent</class>
 		<class>eu.telecom_bretagne.CESI.data.model.Departement</class>
+		<class>eu.telecom_bretagne.CESI.data.model.Auteurinterne</class>
+		<class>eu.telecom_bretagne.CESI.data.model.Auteurexterne</class>
+		<class>eu.telecom_bretagne.CESI.data.model.Journal</class>
+		<class>eu.telecom_bretagne.CESI.data.model.Conference</class>
 		<class>eu.telecom_bretagne.CESI.data.model.Auteur</class>
 		<class>eu.telecom_bretagne.CESI.data.model.Authentification</class>
 		<class>eu.telecom_bretagne.CESI.data.model.Institutionrattchement</class>
 		<class>eu.telecom_bretagne.CESI.data.model.Publication</class>
 		<class>eu.telecom_bretagne.CESI.data.model.Reference</class>
-		<class>eu.telecom_bretagne.CESI.data.model.Auteurinterne</class>
-		<class>eu.telecom_bretagne.CESI.data.model.Auteurexterne</class>
-		<class>eu.telecom_bretagne.CESI.data.model.Journal</class>
-		<class>eu.telecom_bretagne.CESI.data.model.Conference</class>
 	</persistence-unit>
 </persistence>

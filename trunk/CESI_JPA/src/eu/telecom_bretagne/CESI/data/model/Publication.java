@@ -1,9 +1,7 @@
 package eu.telecom_bretagne.CESI.data.model;
 
 import java.io.Serializable;
-
 import javax.persistence.*;
-
 import java.util.Date;
 import java.util.Set;
 
@@ -21,17 +19,9 @@ public class Publication implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@SequenceGenerator(name="PUBLICATION_ID_GENERATOR", sequenceName="PUBLICATION_ID_SEQ", allocationSize=1)
+	@SequenceGenerator(name="PUBLICATION_ID_GENERATOR", sequenceName="PUBLICATION_ID_SEQ")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="PUBLICATION_ID_GENERATOR")
 	private Integer id;
-
-	private String collectivite;
-
-	@Temporal(TemporalType.DATE)
-	private Date dateapparition;
-
-	@Temporal(TemporalType.DATE)
-	private Date dateconference;
 
 	@Temporal(TemporalType.DATE)
 	private Date datedebutpublication;
@@ -42,34 +32,18 @@ public class Publication implements Serializable {
 	@Temporal(TemporalType.DATE)
 	private Date datepublication;
 
-	private String description;
-
-	private String editeur;
-
-	private String isbn;
-
 	private String langue;
 
-	private String lieu;
-
-	private String nomjournal;
-
 	private String resume;
-
-	private String sujet;
-
-	private String theme;
 
 	private String titre;
 
 	private String type;
 
-	private String volume;
-
 	//bi-directional many-to-many association to Auteur
 	@ManyToMany
 	@JoinTable(
-		name="pulicationauteur"
+		name="pulication_auteur"
 		, joinColumns={
 			@JoinColumn(name="pub_id")
 			}
@@ -92,30 +66,6 @@ public class Publication implements Serializable {
 
 	public void setId(Integer id) {
 		this.id = id;
-	}
-
-	public String getCollectivite() {
-		return this.collectivite;
-	}
-
-	public void setCollectivite(String collectivite) {
-		this.collectivite = collectivite;
-	}
-
-	public Date getDateapparition() {
-		return this.dateapparition;
-	}
-
-	public void setDateapparition(Date dateapparition) {
-		this.dateapparition = dateapparition;
-	}
-
-	public Date getDateconference() {
-		return this.dateconference;
-	}
-
-	public void setDateconference(Date dateconference) {
-		this.dateconference = dateconference;
 	}
 
 	public Date getDatedebutpublication() {
@@ -142,29 +92,7 @@ public class Publication implements Serializable {
 		this.datepublication = datepublication;
 	}
 
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public String getEditeur() {
-		return this.editeur;
-	}
-
-	public void setEditeur(String editeur) {
-		this.editeur = editeur;
-	}
-
-	public String getIsbn() {
-		return this.isbn;
-	}
-
-	public void setIsbn(String isbn) {
-		this.isbn = isbn;
-	}
+	
 
 	public String getLangue() {
 		return this.langue;
@@ -174,21 +102,7 @@ public class Publication implements Serializable {
 		this.langue = langue;
 	}
 
-	public String getLieu() {
-		return this.lieu;
-	}
-
-	public void setLieu(String lieu) {
-		this.lieu = lieu;
-	}
-
-	public String getNomjournal() {
-		return this.nomjournal;
-	}
-
-	public void setNomjournal(String nomjournal) {
-		this.nomjournal = nomjournal;
-	}
+	
 
 	public String getResume() {
 		return this.resume;
@@ -198,21 +112,6 @@ public class Publication implements Serializable {
 		this.resume = resume;
 	}
 
-	public String getSujet() {
-		return this.sujet;
-	}
-
-	public void setSujet(String sujet) {
-		this.sujet = sujet;
-	}
-
-	public String getTheme() {
-		return this.theme;
-	}
-
-	public void setTheme(String theme) {
-		this.theme = theme;
-	}
 
 	public String getTitre() {
 		return this.titre;
@@ -230,13 +129,6 @@ public class Publication implements Serializable {
 		this.type = type;
 	}
 
-	public String getVolume() {
-		return this.volume;
-	}
-
-	public void setVolume(String volume) {
-		this.volume = volume;
-	}
 
 	public Set<Auteur> getAuteurs() {
 		return this.auteurs;
