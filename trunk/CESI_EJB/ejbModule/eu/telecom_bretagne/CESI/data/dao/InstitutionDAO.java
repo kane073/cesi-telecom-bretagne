@@ -63,7 +63,7 @@ public class InstitutionDAO implements DAO<Institutionrattchement>{
 	
 	@SuppressWarnings("unchecked")
 	public List<Institutionrattchement> findByName(String nom){
-		Query query = getEntityManager().createNamedQuery(ListRequete.findInstitutionByNom+"nomI");
+		Query query = getEntityManager().createQuery(ListRequete.findInstitutionByNom+"nomI");
 		query.setParameter("nomI", nom);
 		return (List<Institutionrattchement>) query.getResultList();
 	}

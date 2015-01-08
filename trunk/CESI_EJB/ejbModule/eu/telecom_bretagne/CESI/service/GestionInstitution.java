@@ -8,6 +8,7 @@ import javax.ejb.Stateless;
 
 import eu.telecom_bretagne.CESI.data.dao.InstitutionDAO;
 import eu.telecom_bretagne.CESI.data.model.Institutionrattchement;
+import eu.telecom_bretagne.CESI.data.util.HelperCesi;
 import eu.telecom_bretagne.CESI.exception.ExceptionCesi;
 
 /**
@@ -32,19 +33,27 @@ public class GestionInstitution implements IGestionInstitution {
 	}
 
 	@Override
-	public Institutionrattchement creerInstitution(String nom, String adresse) throws Exception {
+	public Institutionrattchement creerInstitution(String nom, String adresse){
 		Institutionrattchement institutionrattchement = new Institutionrattchement();
+	
+		List<Institutionrattchement> list = institutionDAO.findByName(nom);
 		
-		if(institutionDAO.findByName(nom) == null){;
+		if(HelperCesi.listIsEmpty(list)){;
 		
 			institutionrattchement.setNominstitution(nom);
 			institutionrattchement.setAdresse(adresse);
 					
 			institutionDAO.create(institutionrattchement);
 		}else{
-			throw new ExceptionCesi("Cet institution de ratachement existe déjà!");
+			return null;
+			//throw new ExceptionCesi("Cet institution de ratachement existe déjà!");
 		}
 		return institutionrattchement;
+	}
+
+	@Override
+	public Institutionrattchement lireInstitutionrattchement(Integer identifiant) {
+		return institutionDAO.findById(identifiant);
 	}
 
 }
