@@ -19,6 +19,15 @@ public class Auteurinterne extends Auteur implements Serializable {
 		super();
 	}
 	
+	public Auteurinterne(Auteur auteur) {
+		super();
+		setNom(auteur.getNom());
+		setPrenom(auteur.getPrenom());
+		setEmail(auteur.getEmail());
+		setSiteperso(auteur.getSiteperso());
+		setInstitutionrattchement(auteur.getInstitutionrattchement());
+	}
+	
 	private String idtelecom;
 	
 	public String getIdtelecom() {
@@ -28,4 +37,6 @@ public class Auteurinterne extends Auteur implements Serializable {
 	public void setIdtelecom(String idtelecom) {
 		this.idtelecom = idtelecom;
 	}
+	
+	
 }
