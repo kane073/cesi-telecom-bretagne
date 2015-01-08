@@ -11,7 +11,9 @@ import eu.telecom_bretagne.CESI.service.IGestionAuteur;
 public class AppelGestionAuteur {
 
 	public static void main(String[] args) {
-		test_listeAgents();
+		test_listeAuteur();
+		test_creerAuteur();
+		test_listeAuteur();
 	}
 
 	public static IGestionAuteur getGestionAuteur() {
@@ -29,10 +31,14 @@ public class AppelGestionAuteur {
 		return gestionAuteur;
 	}
 
-	public static void test_listeAgents() {
+	public static void test_listeAuteur() {
 		for (Auteur auteur : getGestionAuteur().listeAuteur()) {
 			afficherAuteur(auteur);
 		}
+	}
+	public static void test_creerAuteur(){
+		afficherAuteur(getGestionAuteur().creerAuteurInterne("KANE", "Alassane", 
+				"alassane.kane@telecom-bretagne.eu", "sitePerso", "akane"));
 	}
 
 	public static void afficherAuteur(Auteur auteur) {
