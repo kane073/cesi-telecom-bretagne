@@ -1,6 +1,8 @@
 /*==============================================================*/
-/* Nom de SGBD :  PostgreSQL 8                                  */
-/* Date de création :  08/01/2015 00:37:08                      */
+/* SCHEMA BASE DE DONNEE										*/
+/* Nom de SGBD :  CESI_BD                   		            */
+/* Date de création :  08/01/2015 			                    */
+/* Createur : AKANE												*/
 /*==============================================================*/
 
 
