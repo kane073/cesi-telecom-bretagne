@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="CESI_EAR">
+        <wb-resource deploy-path="/" source-path="/EarContent" tag="defaultRootSource"/>
+        <dependent-module archiveName="CESI_JPA.jar" deploy-path="/lib" handle="module:/resource/CESI_JPA/CESI_JPA">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="CESI_EJB.jar" deploy-path="/" handle="module:/resource/CESI_EJB/CESI_EJB">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="CESI_EJB_client.jar" deploy-path="/lib" handle="module:/resource/CESI_EJB_client/CESI_EJB_client">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="CESI_WebGUI.war" deploy-path="/" handle="module:/resource/CESI_WebGUI/CESI_WebGUI">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>
