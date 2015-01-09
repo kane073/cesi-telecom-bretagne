@@ -13,4 +13,6 @@ public interface DAO<T> {
 	public abstract void delete(T entity);
 	
 	public abstract List<T> findAll();
+	
+	public abstract T attacherObject(T entity, int id);
 }

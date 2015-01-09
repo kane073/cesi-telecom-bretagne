@@ -67,4 +67,11 @@ public class InstitutionDAO implements DAO<Institutionrattchement>{
 		query.setParameter("nomI", nom);
 		return (List<Institutionrattchement>) query.getResultList();
 	}
+
+	@Override
+	public Institutionrattchement attacherObject(Institutionrattchement entity,
+			int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
