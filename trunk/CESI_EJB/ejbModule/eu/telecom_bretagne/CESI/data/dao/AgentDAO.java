@@ -60,6 +60,11 @@ public class AgentDAO implements DAO<Agent>{
 		Query query = getEntityManager().createNamedQuery("Agent.findAll", Agent.class);
 		return (List<Agent>) query.getResultList();
 	}
+	@Override
+	public Agent attacherObject(Agent entity, int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 }
