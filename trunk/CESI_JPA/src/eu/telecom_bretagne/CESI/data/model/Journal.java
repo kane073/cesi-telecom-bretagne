@@ -20,6 +20,16 @@ public class Journal extends Publication implements Serializable {
 		super();
 	}
 	
+	public Journal(Publication publication){
+		super();
+		setTitre(publication.getTitre());
+		setResume(publication.getResume());
+		setLangue(publication.getLangue());
+		setDatepublication(publication.getDatepublication());
+		setDatedebutpublication(publication.getDatedebutpublication());
+		setDatefinpublication(publication.getDatefinpublication());
+	}
+	
 	@Temporal(TemporalType.DATE)
 	private Date dateapparition;
 

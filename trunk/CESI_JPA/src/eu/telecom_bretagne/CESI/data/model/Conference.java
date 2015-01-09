@@ -17,7 +17,8 @@ import javax.persistence.TemporalType;
 @DiscriminatorValue("conference")
 public class Conference extends Publication implements Serializable {
 	private static final long serialVersionUID = 1L;
-
+	
+	
 	@Temporal(TemporalType.DATE)
 	private Date dateconference;
 
@@ -35,6 +36,16 @@ public class Conference extends Publication implements Serializable {
 
 	public Conference() {
 		super();
+	} 
+	
+	public Conference(Publication publication){
+		super();
+		setTitre(publication.getTitre());
+		setResume(publication.getResume());
+		setLangue(publication.getLangue());
+		setDatepublication(publication.getDatepublication());
+		setDatedebutpublication(publication.getDatedebutpublication());
+		setDatefinpublication(publication.getDatefinpublication());
 	}
 
 	public Date getDateconference() {
