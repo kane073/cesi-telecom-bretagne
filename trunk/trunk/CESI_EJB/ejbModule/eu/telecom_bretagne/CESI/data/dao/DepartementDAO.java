@@ -58,5 +58,10 @@ public class DepartementDAO implements DAO<Departement>{
 		Query query = getEntityManager().createNamedQuery("Departement.findAll", Departement.class);
 		return (List<Departement>) query.getResultList();
 	}
+	@Override
+	public Departement attacherObject(Departement entity, int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

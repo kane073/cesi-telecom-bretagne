@@ -84,4 +84,10 @@ public class AgentDepartementDAO implements DAO<AgentDepartement>{
 		return null;
 	}
 
+	@Override
+	public AgentDepartement attacherObject(AgentDepartement entity, int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
