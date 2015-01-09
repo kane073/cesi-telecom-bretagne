@@ -4,8 +4,6 @@ import java.util.List;
 
 import javax.ejb.Remote;
 
-import com.sun.tools.ws.wsdl.document.jaxws.Exception;
-
 import eu.telecom_bretagne.CESI.data.model.Institutionrattchement;
 
 @Remote
@@ -17,6 +15,6 @@ public static final String JNDI_NAME = "java:global/CESI_EAR/CESI_EJB/GestionIns
 	
 	public Institutionrattchement lireInstitutionrattchement(Integer id);
 	
-	public Institutionrattchement creerInstitution(String nom, String adresse);
+	public Institutionrattchement creerInstitution(String nom, String adresse) throws Exception;
 	
 }
