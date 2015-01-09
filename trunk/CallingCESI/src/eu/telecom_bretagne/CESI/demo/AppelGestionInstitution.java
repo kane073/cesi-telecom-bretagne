@@ -50,14 +50,12 @@ public class AppelGestionInstitution {
 		String nom = "Télécom Paris";
 		String adresse = "Rue Barrau";
 
-		Institutionrattchement institutionrattchement = getGestionInstitution().creerInstitution(nom, adresse);
-		if(null != institutionrattchement){
-			test_lireInstitution(institutionrattchement.getIdInstitution());
-		}else{
-			System.out.println("L'institution de rattachement existe déjà!");
+		Institutionrattchement institutionrattchement;
+		try {
+			institutionrattchement = getGestionInstitution().creerInstitution(nom, adresse);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
 		}
-		
-
 	}
 
 	private static void afficherInstitution(

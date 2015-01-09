@@ -7,13 +7,15 @@ import eu.telecom_bretagne.CESI.data.model.Auteur;
 import eu.telecom_bretagne.CESI.data.model.Auteurexterne;
 import eu.telecom_bretagne.CESI.data.model.Auteurinterne;
 import eu.telecom_bretagne.CESI.service.IGestionAuteur;
+import eu.telecom_bretagne.CESI.utile.TypeAuteur;
 
 public class AppelGestionAuteur {
 
 	public static void main(String[] args) {
-		test_listeAuteur();
+		//test_listeAuteur();
 		test_creerAuteur();
-		test_listeAuteur();
+		//test_modifierAuteu();
+		//test_listeAuteur();
 	}
 
 	public static IGestionAuteur getGestionAuteur() {
@@ -37,13 +39,24 @@ public class AppelGestionAuteur {
 		}
 	}
 	public static void test_creerAuteur(){
-		afficherAuteur(getGestionAuteur().creerAuteurInterne("KANE", "Alassane", 
-				"alassane.kane@telecom-bretagne.eu", "sitePerso", "akane"));
+		Auteur auteur;
+		try {
+			auteur = getGestionAuteur().creerAuteurInterne("KANE", "Alassane", 
+					"alassane.kane@telecom-bretagne.eu", "sitePerso", "akane");
+			afficherAuteur(auteur);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
 	}
-
+	
+	public static void test_modifierAuteu(){
+		getGestionAuteur().modifierAuteur(1, "KANE", "Fousseyni", 
+				"fousseyni.kane@gmail.com", "sitePerso", 3);
+	}
 	public static void afficherAuteur(Auteur auteur) {
-		System.out.println("Auteur id:" + auteur.getId() + " nom:"
-				+ auteur.getNom() + "prenom" + auteur.getPrenom() + "email"
+		System.out.println("Auteur id:" + auteur.getId() + " nom: "
+				+ auteur.getNom() + " prenom :" + auteur.getPrenom() + " email"
 				+ auteur.getEmail());
 		if (auteur instanceof Auteurexterne) {
 			System.out.println("Est un auteur Externe");
