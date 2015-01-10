@@ -25,6 +25,7 @@ public class AuteurDAO implements DAO<Auteur>{
 	
 	public EntityManager getEntityManager(){
 		return entityManager;
+		
 	}
 	
     /**
