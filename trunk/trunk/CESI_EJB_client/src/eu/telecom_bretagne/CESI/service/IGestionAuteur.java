@@ -24,7 +24,7 @@ public interface IGestionAuteur {
 			String sitePerso, String idExterne, int identifiantInstitut) throws Exception;
 
 	public Auteur creerAuteurInterne(String nom, String prenom, String email,
-			String sitePerso, String idInterne) throws Exception;
+			String sitePerso, String idInterne, int identifiantInstitut) throws Exception;
 
 	public void modifierAuteur(int identifiant, String nom, String prenom, String email, String sitePerso,
 			int idInstitution);
