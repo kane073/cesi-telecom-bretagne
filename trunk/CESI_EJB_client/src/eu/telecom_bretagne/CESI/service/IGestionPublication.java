@@ -34,4 +34,20 @@ public interface IGestionPublication {
 			Date dateApparition, String volume, 
 			List<Integer> listIdentifiantAuteur
 			) throws Exception;
+	
+	public void modifierPublication(int identifiant,
+			String titre, Date datePublication, String resume,
+			String langue,
+			List<Integer> listIdentifiantAuteur
+			) throws Exception;
+	
+	public void supprimerPublication(int identifiant)  throws Exception ;
+	
+	public List<String> typeRecherche();
+	
+	public List<Publication> recherchePublicationParTitre(String textSearch) throws Exception;
+	
+	public List<Publication> recherchePublicationParAuteur(String nom) throws Exception;
+	
+	
 }
