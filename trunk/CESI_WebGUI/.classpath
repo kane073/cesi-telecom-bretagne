@@ -15,5 +15,6 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/CESI_EJB"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/CESI_EJB_client"/>
+	<classpathentry kind="lib" path="C:/Java/lib/javax.servlet.jsp.jstl-api-1.2.1-javadoc.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
