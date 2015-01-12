@@ -28,6 +28,7 @@ public class Journal extends Publication implements Serializable {
 		setDatepublication(publication.getDatepublication());
 		setDatedebutpublication(publication.getDatedebutpublication());
 		setDatefinpublication(publication.getDatefinpublication());
+		setAuteurs(publication.getAuteurs());
 	}
 	
 	@Temporal(TemporalType.DATE)
