@@ -63,12 +63,14 @@ public class GestionAuteur implements IGestionAuteur {
 		if(TypeAuteur.auteurinterne.toString().equals(type)){
 			Auteurinterne auteurinterne = new Auteurinterne(auteur);
 			auteurinterne.setIdtelecom(idInterne);
+			institutionrattchement.getAuteurs().add(auteurinterne);
 			auteurDAO.create(auteurinterne);
 			institutionDAO.update(institutionrattchement);
 			return auteurinterne;
 		}else{
 			Auteurexterne auteurexterne = new Auteurexterne(auteur);
 			auteurexterne.setIdexterne(idExterne);
+			institutionrattchement.getAuteurs().add(auteurexterne);
 			auteurDAO.create(auteurexterne);
 			institutionDAO.update(institutionrattchement);
 			return auteurexterne;
@@ -85,9 +87,9 @@ public class GestionAuteur implements IGestionAuteur {
 
 	@Override
 	public Auteur creerAuteurInterne(String nom, String prenom, String email,
-			String sitePerso, String idInterne) throws Exception {
+			String sitePerso, String idInterne, int identifiantInstitut) throws Exception {
 		return creerAuteur(nom, TypeAuteur.auteurinterne.toString(), prenom, email, sitePerso, 
-				null, idInterne, 1);
+				null, idInterne, identifiantInstitut);
 	}
 	
 	@Override
@@ -108,41 +110,6 @@ public class GestionAuteur implements IGestionAuteur {
 		institutionDAO.update(old_institutionrattchement);
 		institutionDAO.update(institutionrattchement);
 		
-//		auteurDAO.enregistrerLaSession();
-//		auteurDAO.detacheEntity(auteur);
-//		
-//		if(TypeAuteur.auteurinterne.toString().equals(type)){
-//			Auteurinterne auteurinterne = new Auteurinterne(auteur);
-//			auteurinterne.setId(auteur.getId());
-//			auteurinterne.setIdtelecom(idInterne);
-//			auteurDAO.create(auteurinterne);
-//		}else{
-//			Auteurexterne auteurexterne = new Auteurexterne(auteur);
-//			auteurexterne.setId(auteur.getId());
-//			auteurexterne.setIdexterne(idExterne);
-//			auteurDAO.create(auteurexterne);
-//		}
-		
-//		Auteurinterne auteurinterne;
-//		Auteurexterne auteurexterne;
-//		if(auteur instanceof Auteurinterne){
-//			auteurinterne = auteurDAO.findByIdAuteurInterne(identifiant);
-//		}
-//		if(auteur instanceof Auteurexterne){
-//			auteurexterne = auteurDAO.findByIdAuteurExterne(identifiant);
-//		}
-//		if(TypeAuteur.auteurinterne.toString().equals(type)){
-//			auteurinterne = new Auteurinterne(auteur);
-//			auteurinterne.setId(auteur.getId());
-//			auteurinterne.setIdtelecom(idInterne);
-//			auteurDAO.update(auteurinterne);
-//		}
-//		if(TypeAuteur.auteurexterne.toString().equals(type)){
-//			auteurexterne = new Auteurexterne(auteur);
-//			auteurexterne.setId(auteur.getId());
-//			auteurexterne.setIdexterne(idExterne);
-//			auteurDAO.update(auteurexterne);
-//		}
 	}
 	
 }

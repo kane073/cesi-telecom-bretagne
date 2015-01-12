@@ -10,4 +10,11 @@ public class ListRequete {
 	
 	public static String findPublicationByTitre = "SELECT publication FROM Publication publication"
 											+ " WHERE publication.titre = :";
+	
+	public static String findReferenceByPublication = "SELECT reference FROM Reference reference "
+													+ "JOIN reference.publication publication"
+													+ " WHERE publication.id = :";
+	
+	public static String findReferenceByCode = "SELECT reference FROM Reference reference"
+											  + " WHERE reference.codereference = :";
 }
