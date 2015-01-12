@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page import="eu.telecom_bretagne.CESI.data.model.Publication"%>
 <%@page import="eu.telecom_bretagne.CESI.data.model.Auteur"%>
 <%@page import="eu.telecom_bretagne.CESI.data.model.Institutionrattchement"%>
@@ -64,8 +65,13 @@
 				<h2>
 					<a href="#">Liste des publications</a>
 				</h2>
-
+				
 				<div class="table-responsive">
+				   <c:if test="${not empty messageErreur}">
+						<div class="alert alert-danger">${messageErreur}</div>
+					</c:if>
+				<form name="tableau_publication" action="suppression_publication">
+				 
 					<table class="table table-hover">
 						<thead>
 							<tr>
@@ -95,7 +101,14 @@
 							%>
 						</tbody>
 					</table>
+					<button type="submit" name="actionB" value="reference" class="btn btn-outline btn-warning">
+										Creer une réference </button>
+					<button type="submit" name="actionB" value="supprimer" class="btn btn-outline btn-danger">
+										Supprimer une publication </button>
+					
+					</form>
 				</div>
+				
 				<!-- First Blog Post -->
 				<h2>
 					<a href="#">Liste des référencement</a>
@@ -244,8 +257,7 @@
 							<ul class="list-unstyled">
 								<li><a type="button" class="btn btn-outline btn-success"
 									href="creer_publication.jsp"> Créer une publication </a></li>
-								<li><a type="button" class="btn btn-outline btn-warning">
-										Créer une référence </a></li>
+								
 								<li><a type="button" class="btn btn-outline btn-info"
 								href="creer_auteur.jsp">
 										Créer un auteur </a></li>

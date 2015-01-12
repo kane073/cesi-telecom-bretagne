@@ -134,8 +134,7 @@
 							<ul class="list-unstyled">
 								<li><a type="button" class="btn btn-outline btn-success"
 									href="creer_publication.jsp"> Créer une publication </a></li>
-								<li><a type="button" class="btn btn-outline btn-warning">
-										Créer une référence </a></li>
+								
 								<li><a type="button" class="btn btn-outline btn-info"
 									href="creer_auteur.jsp"> Créer un auteur </a></li>
 								<li><a type="button" class="btn btn-outline btn-default">

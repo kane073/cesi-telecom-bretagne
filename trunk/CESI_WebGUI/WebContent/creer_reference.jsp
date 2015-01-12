@@ -1,30 +1,24 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page import="java.util.Date"%>
-<%@page import="eu.telecom_bretagne.CESI.data.model.Auteur"%>
-<%@page
-	import="eu.telecom_bretagne.CESI.data.model.Institutionrattchement"%>
+<%@page import="eu.telecom_bretagne.CESI.data.model.Reference"%>
+<%@page import="eu.telecom_bretagne.CESI.data.model.Publication"%>
 <%@page import="java.util.List"%>
+<%@page import="eu.telecom_bretagne.CESI.service.IGestionReference"%>
 <%@page import="eu.telecom_bretagne.CESI.service.IGestionPublication"%>
-<%@page import="eu.telecom_bretagne.CESI.service.IGestionAuteur"%>
-<%@page import="eu.telecom_bretagne.CESI.service.IGestionInstitution"%>
+
 <%@page import="eu.telecom_bretagne.CESI.utils.HelperGuiCesi"%>
 <%@page import="javax.naming.InitialContext"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
 	InitialContext ctx = new InitialContext();
+	IGestionReference gestionReference = (IGestionReference) ctx
+			.lookup(IGestionReference.JNDI_NAME);
+	
 	IGestionPublication gestionPublication = (IGestionPublication) ctx
 			.lookup(IGestionPublication.JNDI_NAME);
-
+	List<Publication> publications = gestionPublication
+			.listPublication();
 	List<String> listTypeRecherche = gestionPublication.typeRecherche();
-
-	IGestionAuteur gestionAuteur = (IGestionAuteur) ctx
-			.lookup(IGestionAuteur.JNDI_NAME);
-	List<Auteur> auteurs = gestionAuteur.listeAuteur();
-
-	IGestionInstitution gestionInstitution = (IGestionInstitution) ctx
-			.lookup(IGestionInstitution.JNDI_NAME);
-	List<Institutionrattchement> institutionrattchements = gestionInstitution
-			.listeInstitution();
 %>
 
 <!DOCTYPE html>
@@ -59,7 +53,7 @@
 
 				<!-- First Blog Post -->
 				<h2>
-					<a href="#">Créer un auteur</a>
+					<a href="#">Créer une référence</a>
 				</h2>
 				<p class="lead">
 					<a href="index.jsp">Accueil</a>
@@ -75,44 +69,18 @@
 					<c:if test="${not empty messageErreur}">
 						<div class="alert alert-danger">${messageErreur}</div>
 					</c:if>
-					<form role="form" method="post" action="creation_auteur">
+					<form role="form" method="post" action="creation_reference">
+						<input type="hidden" name="id_publication" value='<c:out value="${id_publication}"></c:out>'/> 
 						<div class="form-group">
-							<label>Nom *</label> <input name="nom" class="form-control">
+							<label>Code *</label> <input name="code" class="form-control">
 						</div>
 						<div class="form-group">
-							<label>Prenom *</label> <input name="prenom" class="form-control">
+							<label>Titre publication *</label> 
+							<input name="publicationname" value="${publication.titre}" class="form-control" disabled="disabled">
 						</div>
-						<div class="form-group">
-							<label>Email *</label> <input name="email" class="form-control">
-						</div>
-						<div class="form-group">
-							<label>Type d'auteur</label> <label class="radio-inline">
-								<input type="radio" name="typeAuteur" id="id_interne"
-								value="auteurinterne" checked="">Interne
-							</label> <label class="radio-inline"> <input type="radio"
-								name="typeAuteur" id="id_externe" value="auteurexterne">Externe
-							</label>
-						</div>
-						<div class="form-group">
-							<label></label> <input class="form-control" name="idauteur"
-								placeholder="Id de l'auteur">
-						</div>
-						<div class="form-group">
-							<label>Choix des l'institution de rattachement</label> <select
-								name="institution" class="form-control">
-								<%
-									for (Institutionrattchement i : institutionrattchements) {
-								%>
-								<option value="<%=i.getIdInstitution()%>">
-									<%=i.getNominstitution()%>
-									<%
-										}
-									%>
-								
-							</select>
-						</div>
+						
 						<button type="submit" class="btn btn-default">Créer</button>
-						<button type="reset" class="btn btn-default">Annuler</button>
+						<a href="index.jsp" class="btn btn-default">Retour</a>
 					</form>
 				</div>
 			</div>
@@ -159,6 +127,9 @@
 								<li><a type="button" class="btn btn-outline btn-success"
 									href="creer_publication.jsp"> Créer une publication </a></li>
 
+								<li><a type="button" class="btn btn-outline btn-warning"
+								href="creer_auteur.jsp">
+										Créer un auteur </a></li>
 
 								<li><a type="button" class="btn btn-outline btn-default">
 										Créer une intitution </a></li>
