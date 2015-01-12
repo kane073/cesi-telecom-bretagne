@@ -15,7 +15,7 @@ public class Reference implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@SequenceGenerator(name="REFERENCE_IDREFERENCE_GENERATOR", sequenceName="REFERENCE_ID_REFERENCE_SEQ")
+	@SequenceGenerator(name="REFERENCE_IDREFERENCE_GENERATOR", sequenceName="REFERENCE_ID_REFERENCE_SEQ", allocationSize=1)
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="REFERENCE_IDREFERENCE_GENERATOR")
 	@Column(name="id_reference")
 	private Integer idReference;

@@ -32,8 +32,6 @@ public class Conference extends Publication implements Serializable {
 	
 	private String theme;
 
-	private String titre;
-
 	public Conference() {
 		super();
 	} 
@@ -46,6 +44,7 @@ public class Conference extends Publication implements Serializable {
 		setDatepublication(publication.getDatepublication());
 		setDatedebutpublication(publication.getDatedebutpublication());
 		setDatefinpublication(publication.getDatefinpublication());
+		setAuteurs(publication.getAuteurs());
 	}
 
 	public Date getDateconference() {
@@ -96,14 +95,6 @@ public class Conference extends Publication implements Serializable {
 
 	public void setTheme(String theme) {
 		this.theme = theme;
-	}
-
-	public String getTitre() {
-		return this.titre;
-	}
-
-	public void setTitre(String titre) {
-		this.titre = titre;
 	}
 
 }
