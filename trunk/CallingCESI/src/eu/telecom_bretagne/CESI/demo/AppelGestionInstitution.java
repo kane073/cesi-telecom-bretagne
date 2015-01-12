@@ -9,9 +9,9 @@ import eu.telecom_bretagne.CESI.service.IGestionInstitution;
 public class AppelGestionInstitution {
 
 	public static void main(String[] args) {
-		test_listeInstitutions();
-		test_creerInstitution();
-		test_listeInstitutions();
+		//test_listeInstitutions();
+		//test_creerInstitution();
+		
 	}
 
 	public static IGestionInstitution getGestionInstitution() {
