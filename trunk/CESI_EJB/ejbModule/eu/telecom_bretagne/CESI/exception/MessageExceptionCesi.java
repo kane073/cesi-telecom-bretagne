@@ -14,7 +14,7 @@ public enum MessageExceptionCesi {
 	ExceptionReferenceCodeNotExiste("Aucune référence avec ce code n'existe dans le système"),
 	ExceptionReferenceSupprimer("Cette référence a été supprimée!"),
 	ExceptionReferencePublicationNotExiste("La publication que vous voulez référencer n'existe pas dans le système"),
-	ExceptionReferencePublicationExiste("La publication cette publication à déjà une référence");
+	ExceptionReferencePublicationExiste("Cette publication à déjà une référence");
 	
 	
 	private String message = "";
