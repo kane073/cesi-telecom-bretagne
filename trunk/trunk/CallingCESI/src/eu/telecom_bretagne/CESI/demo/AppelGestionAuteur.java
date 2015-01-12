@@ -13,9 +13,9 @@ public class AppelGestionAuteur {
 
 	public static void main(String[] args) {
 		//test_listeAuteur();
-		test_creerAuteur();
+		//test_creerAuteur();
 		//test_modifierAuteu();
-		//test_listeAuteur();
+		
 	}
 
 	public static IGestionAuteur getGestionAuteur() {
@@ -42,7 +42,7 @@ public class AppelGestionAuteur {
 		Auteur auteur;
 		try {
 			auteur = getGestionAuteur().creerAuteurInterne("KANE", "Alassane", 
-					"alassane.kane@telecom-bretagne.eu", "sitePerso", "akane");
+					"alassane.kane@telecom-bretagne.eu", "sitePerso", "akane", 3);
 			afficherAuteur(auteur);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -57,7 +57,7 @@ public class AppelGestionAuteur {
 	public static void afficherAuteur(Auteur auteur) {
 		System.out.println("Auteur id:" + auteur.getId() + " nom: "
 				+ auteur.getNom() + " prenom :" + auteur.getPrenom() + " email"
-				+ auteur.getEmail());
+				+ auteur.getEmail()+"\n");
 		if (auteur instanceof Auteurexterne) {
 			System.out.println("Est un auteur Externe");
 		}

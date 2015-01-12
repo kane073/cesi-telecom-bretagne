@@ -4,6 +4,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/CESI_EJB_client"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/CESI_JPA"/>
-	<classpathentry kind="lib" path="C:/glassfish4/glassfish/lib/gf-client.jar"/>
+	<classpathentry kind="lib" path="C:/glassfish4/glassfish/lib/gf-client.jar" sourcepath="C:/Users/AKANE/.m2/repository/org/glassfish/main/web/web-core/4.1/web-core-4.1-sources.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
